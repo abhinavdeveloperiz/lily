@@ -1,0 +1,130 @@
+{% load static %}
+
+<!-- ===================== DESKTOP NAV ===================== -->
+<header class="hidden md:block fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50 text-white uppercase">
+
+    <div
+        class="bg-black backdrop-blur-xl border border-white/10 rounded-2xl px-8 py-6 flex items-center justify-between shadow-xl">
+
+        <!-- LEFT -->
+        <nav class="flex gap-8 text-sm tracking-wide">
+            <a href="{% url 'index' %}" class="relative group">
+                <span class="group-hover:text-gold transition">Home</span>
+                <span class="absolute left-0 -bottom-1 w-0 h-[1px] bg-gold group-hover:w-full transition-all"></span>
+            </a>
+
+            <a href="{% url 'product_list' %}" class="relative group">
+                <span class="group-hover:text-gold transition">Products</span>
+                <span class="absolute left-0 -bottom-1 w-0 h-[1px] bg-gold group-hover:w-full transition-all"></span>
+            </a>
+        </nav>
+
+        <!-- CENTER LOGO (FOCUS) -->
+        <div class="absolute left-1/2 -translate-x-1/2">
+
+            <a href="{% url 'index' %}" class="relative group">
+
+                <!-- Soft radial glow -->
+                <div
+                    class="absolute inset-0 bg-gold/20 blur-2xl rounded-full scale-150 opacity-40 group-hover:opacity-70 transition">
+                </div>
+
+                <!-- Logo -->
+                <img src="{% static 'logo/logo.png' %}"
+                    class="relative h-20 object-contain transition duration-300 group-hover:scale-110">
+
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-6">
+
+            <!-- Wishlist -->
+            <a href="{% url 'wishlist' %}" class="relative group">
+                <i class="fa-regular fa-heart text-xl group-hover:text-gold transition"></i>
+                <span
+                    class="absolute -top-2 -right-2 bg-gold text-black text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-semibold">2</span>
+            </a>
+
+            <!-- Cart -->
+            <a href="{% url 'cart' %}" class="relative group">
+                <i class="fa-solid fa-bag-shopping text-xl group-hover:text-gold transition"></i>
+                <span
+                    class="absolute -top-2 -right-2 bg-gold text-black text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-semibold">3</span>
+            </a>
+
+        </div>
+
+    </div>
+</header>
+
+
+
+<!-- ===================== MOBILE TOP ===================== -->
+<div
+    class="md:hidden text-white fixed top-0 left-0 w-full bg-black backdrop-blur border-b border-white/10 z-50 flex justify-center py-3">
+
+    <img src="{% static 'logo/logo.png' %}" class="h-14 object-contain">
+
+</div>
+
+
+
+<!-- ===================== MOBILE BOTTOM (iOS STYLE DOCK) ===================== -->
+<div class="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md z-50 text-white uppercase">
+
+    <div class="bg-black backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl px-4 py-4">
+
+        <div class="flex justify-between items-center">
+
+            <!-- Home -->
+            <a href="{% url 'index' %}" class="flex flex-col items-center text-xs group">
+                <i class="fa-solid fa-house text-lg group-hover:text-gold transition"></i>
+                <span>Home</span>
+            </a>
+
+            <!-- Shop -->
+            <a href="{% url 'product_list' %}" class="flex flex-col items-center text-xs group">
+                <i class="fa-solid fa-box text-lg group-hover:text-gold transition"></i>
+                <span>Shop</span>
+            </a>
+
+            <!-- CENTER LOGO FLOAT -->
+            <a href="{% url 'index' %}" class="relative -mt-8">
+                <div
+                    class="w-16 h-16 bg-white border-4 border-gold rounded-full flex items-center justify-center shadow-lg">
+
+                    <!-- Glow -->
+                    <div class="absolute inset-0 bg-gold/20 blur-xl rounded-full"></div>
+
+                    <img src="{% static 'logo/logo.png' %}" class="relative h-9 ">
+                </div>
+            </a>
+
+            <!-- Wishlist -->
+            <a href="{% url 'wishlist' %}" class="flex flex-col items-center text-xs relative group">
+                <i class="fa-regular fa-heart text-lg group-hover:text-gold transition"></i>
+                <span>Wishlist</span>
+
+                <span
+                    class="absolute -top-1 right-3 bg-gold text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
+                    2
+                </span>
+            </a>
+
+            <!-- Cart -->
+            <a href="{% url 'cart' %}" class="flex flex-col items-center text-xs relative group">
+                <i class="fa-solid fa-bag-shopping text-lg group-hover:text-gold transition"></i>
+                <span>Cart</span>
+
+                <span
+                    class="absolute -top-1 right-3 bg-gold text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
+                    3
+                </span>
+            </a>
+
+        </div>
+
+    </div>
+</div>

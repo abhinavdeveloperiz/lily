@@ -1,0 +1,311 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- ================= CART SECTION ================= -->
+<section class="max-w-7xl mx-auto px-4 py-14 mt-24">
+
+    <div class="grid lg:grid-cols-3 gap-10">
+
+        <!-- ================= LEFT : CART PRODUCTS ================= -->
+        <div class="lg:col-span-2 space-y-6">
+
+            <!-- PRODUCT -->
+            <div
+                class="bg-white rounded-3xl shadow-md hover:shadow-xl transition p-4 md:p-6 flex flex-col md:flex-row gap-5">
+
+                <!-- IMAGE -->
+                <a href="{% url 'product_detail' %}"
+                    class="relative w-full md:w-[220px] overflow-hidden rounded-2xl block">
+
+                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
+                        class="w-full h-[260px] md:h-[240px] object-cover">
+
+                    <!-- REMOVE -->
+                    <button
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white shadow-lg hover:bg-red-500 hover:text-white transition flex items-center justify-center">
+
+                        <i class="fas fa-trash text-sm"></i>
+
+                    </button>
+
+                </a>
+
+                <!-- CONTENT -->
+                <div class="flex-1 flex flex-col justify-between">
+
+                    <div>
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+
+                                <h3 class="text-xl font-semibold text-black">
+                                    Luxury White Dress
+                                </h3>
+
+                                <p class="text-gray-500 text-sm mt-1">
+                                    Premium Women Collection
+                                </p>
+
+                            </div>
+
+                            <span class="bg-gold text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                                New
+                            </span>
+
+                        </div>
+
+                        <!-- DETAILS -->
+                        <div class="flex flex-wrap gap-5 mt-5 text-sm text-gray-500">
+
+                            <div>
+                                Size :
+                                <span class="text-black font-medium">M</span>
+                            </div>
+
+                            <div>
+                                Color :
+                                <span class="text-black font-medium">White</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BOTTOM -->
+                    <div class="flex items-center justify-between mt-8 flex-wrap gap-5">
+
+                        <!-- QUANTITY -->
+                        <div class="flex items-center border border-gray-200 rounded-full overflow-hidden">
+
+                            <button class="w-12 h-12 hover:bg-black hover:text-white transition text-lg">
+                                -
+                            </button>
+
+                            <span class="w-12 text-center font-semibold">
+                                1
+                            </span>
+
+                            <button class="w-12 h-12 hover:bg-black hover:text-white transition text-lg">
+                                +
+                            </button>
+
+                        </div>
+
+                        <!-- PRICE -->
+                        <div class="text-right">
+
+                            <p class="text-sm text-gray-400 line-through">
+                                ₹3,999
+                            </p>
+
+                            <h4 class="text-2xl font-bold text-black">
+                                ₹2,499
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT -->
+            <div
+                class="bg-white rounded-3xl shadow-md hover:shadow-xl transition p-4 md:p-6 flex flex-col md:flex-row gap-5">
+
+                <!-- IMAGE -->
+                <a href="{% url 'product_detail' %}"
+                    class="relative w-full md:w-[220px] overflow-hidden rounded-2xl block">
+
+                    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
+                        class="w-full h-[260px] md:h-[240px] object-cover">
+
+                    <!-- REMOVE -->
+                    <button
+                        class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white shadow-lg hover:bg-red-500 hover:text-white transition flex items-center justify-center">
+
+                        <i class="fas fa-trash text-sm"></i>
+
+                    </button>
+
+                </a>
+
+                <!-- CONTENT -->
+                <div class="flex-1 flex flex-col justify-between">
+
+                    <div>
+
+                        <div class="flex items-start justify-between gap-4">
+
+                            <div>
+
+                                <h3 class="text-xl font-semibold text-black">
+                                    Premium Black Dress
+                                </h3>
+
+                                <p class="text-gray-500 text-sm mt-1">
+                                    Evening Collection
+                                </p>
+
+                            </div>
+
+                            <span class="bg-black text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                                Trending
+                            </span>
+
+                        </div>
+
+                        <!-- DETAILS -->
+                        <div class="flex flex-wrap gap-5 mt-5 text-sm text-gray-500">
+
+                            <div>
+                                Size :
+                                <span class="text-black font-medium">L</span>
+                            </div>
+
+                            <div>
+                                Color :
+                                <span class="text-black font-medium">Black</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BOTTOM -->
+                    <div class="flex items-center justify-between mt-8 flex-wrap gap-5">
+
+                        <!-- QUANTITY -->
+                        <div class="flex items-center border border-gray-200 rounded-full overflow-hidden">
+
+                            <button class="w-12 h-12 hover:bg-black hover:text-white transition text-lg">
+                                -
+                            </button>
+
+                            <span class="w-12 text-center font-semibold">
+                                2
+                            </span>
+
+                            <button class="w-12 h-12 hover:bg-black hover:text-white transition text-lg">
+                                +
+                            </button>
+
+                        </div>
+
+                        <!-- PRICE -->
+                        <div class="text-right">
+
+                            <h4 class="text-2xl font-bold text-black">
+                                ₹6,598
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= RIGHT : SUMMARY ================= -->
+        <div>
+
+            <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8 sticky top-24">
+
+                <h3 class="text-2xl font-semibold text-black mb-8">
+                    Order Summary
+                </h3>
+
+
+
+                <!-- PRICE DETAILS -->
+                <div class="space-y-5 border-b border-gray-200 pb-6">
+
+                    <div class="flex items-center justify-between text-gray-600">
+
+                        <span>Subtotal</span>
+
+                        <span>₹9,097</span>
+
+                    </div>
+
+                    <div class="flex items-center justify-between text-gray-600">
+
+                        <span>Shipping</span>
+
+                        <span>Free</span>
+
+                    </div>
+
+                    <div class="flex items-center justify-between text-gray-600">
+
+                        <span>Discount</span>
+
+                        <span class="text-green-600">- ₹500</span>
+
+                    </div>
+
+                </div>
+
+                <!-- TOTAL -->
+                <div class="flex items-center justify-between mt-6">
+
+                    <span class="text-lg font-medium text-black">
+                        Total
+                    </span>
+
+                    <span class="text-3xl font-bold text-black">
+                        ₹8,597
+                    </span>
+
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="space-y-4 mt-8">
+
+                    <button
+                        class="w-full h-14 rounded-2xl bg-black text-white hover:bg-gold transition text-base font-medium shadow-lg">
+
+                        Proceed to Checkout
+
+                    </button>
+
+                    <a href="{% url 'product_list' %}"
+                        class="w-full h-14 rounded-2xl border border-gray-300 hover:bg-gray-100 transition text-base font-medium flex items-center justify-center">
+
+                        Continue Shopping
+
+                    </a>
+
+                </div>
+
+                <!-- SECURE -->
+                <div class="mt-8 flex items-center justify-center gap-3 text-sm text-gray-500">
+
+                    <i class="fas fa-lock"></i>
+
+                    Secure Checkout
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

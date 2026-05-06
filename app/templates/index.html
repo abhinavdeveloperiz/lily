@@ -1,0 +1,718 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================== HERO SWIPER ===================== -->
+<div class=" mt-24 md:mt-8 px-4">
+
+    <div class="mx-auto">
+
+        <div class="swiper mySwiper rounded-2xl overflow-hidden" data-aos="fade-in">
+
+            <div class="swiper-wrapper">
+
+                <!-- SLIDE 1 -->
+                <div class="swiper-slide relative">
+                    <img src="{% static 'banner/banner1.png' %}" alt="Banner 1"
+                        class="w-full h-[20vh] md:h-[90vh] object-cover object-top">
+
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="swiper-slide relative">
+                    <img src="{% static 'banner/banner2.png' %}" alt="Banner 2"
+                        class="w-full h-[20vh] md:h-[90vh] object-cover object-top ">
+
+
+                </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- INIT -->
+<script>
+    new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+</script>
+
+
+<div class="max-w-7xl mx-auto mt-10 px-4">
+
+    <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-gold uppercase"></h2>
+    <!-- HEADING -->
+    <div class="flex items-center justify-between mb-6">
+        <div>
+            <h2 class="text-2xl md:text-3xl font-semibold uppercase text-gold">
+                Shop by Category
+            </h2>
+
+
+        </div>
+
+        <a href="{% url 'product_list' %}"
+            class="text-sm uppercase tracking-wider text-gold hover:text-black transition">
+            View All
+        </a>
+    </div>
+    <!-- SCROLL -->
+    <div class="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+
+        <!-- ITEM -->
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://yashgallery.com/cdn/shop/files/2_1a294cc0-2d06-4d73-ab26-eceec66bfcee.jpg?v=1752068354&width=1445"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">maternity</p>
+        </div>
+
+
+        <!-- ITEM -->
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfk1LJX59GdjEOyoYJhv8dtj8ypXTYNQbx7g&s"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Dresses</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://m.media-amazon.com/images/I/61jQGZBXUmL._AC_UY1100_.jpg"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Tops</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://www.lakshita.com/cdn/shop/articles/IMG_4716_1.jpg?v=1693373074"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Kurti</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScu3OA9CvpwofHSJSyCY1IDfH8b623NIybhQ&s"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Saree</p>
+        </div>
+
+        <!-- ITEM -->
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfk1LJX59GdjEOyoYJhv8dtj8ypXTYNQbx7g&s"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Dresses</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://m.media-amazon.com/images/I/61jQGZBXUmL._AC_UY1100_.jpg"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Tops</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=300&h=300&fit=crop"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Gowns</p>
+        </div>
+
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScu3OA9CvpwofHSJSyCY1IDfH8b623NIybhQ&s"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Saree</p>
+        </div>
+
+        <div class="flex flex-col items-center min-w-[90px] md:min-w-[140px] snap-start">
+            <div class="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden shadow-lg">
+                <img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=300&h=300&fit=crop"
+                    class="w-full h-full object-cover">
+            </div>
+            <p class="mt-2 text-sm md:text-base font-medium">Gowns</p>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ================= FEATURED COLLECTION ================= -->
+<section class="max-w-7xl mx-auto px-4 mt-16">
+
+    <!-- HEADING -->
+    <div class="flex items-center justify-between mb-6">
+
+        <div>
+            <h2 class="text-2xl md:text-3xl font-semibold uppercase text-gold">
+                Featured Collection
+            </h2>
+        </div>
+
+        <a href="{% url 'product_list' %}"
+            class="text-sm uppercase tracking-wider text-gold hover:text-black transition">
+            View All
+        </a>
+
+    </div>
+
+    <!-- SCROLL CONTAINER -->
+    <div class="flex gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-2">
+
+        <!-- PRODUCT CARD -->
+        <div
+            class="min-w-[320px] md:min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 snap-start group">
+
+            <!-- IMAGE -->
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- TAG -->
+                <span
+                    class="absolute top-4 left-4 bg-gold text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide z-20">
+                    New
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition duration-300 z-20">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <!-- CONTENT -->
+            <div class="p-4">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Luxury White Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Premium Women Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-4">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹2,499
+                        </span>
+
+                        <span class="text-sm text-gray-400 line-through ml-2">
+                            ₹3,999
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div
+            class="min-w-[320px] md:min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 snap-start group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <span
+                    class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide z-20">
+                    Trending
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition duration-300 z-20">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-4">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Elegant Beige Outfit
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Modern Fashion Wear
+                </p>
+
+                <div class="flex items-center justify-between mt-4">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹1,999
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div
+            class="min-w-[320px] md:min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 snap-start group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition duration-300 z-20">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-4">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Gold Edition Saree
+                    <span class="bg-red-500 text-white text-xs px-2 py-1 rounded-full ml-2">
+                        SOLD OUT
+                    </span>
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Wedding Special Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-4">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹4,999
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-gray-400 text-white hover:bg-gray-300 transition flex items-center justify-center"
+                        disabled>
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div
+            class="min-w-[320px] md:min-w-[320px] bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 snap-start group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition duration-300 z-20">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-4">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Premium Black Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Evening Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-4">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹3,299
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= NEW ARRIVALS ================= -->
+<section class="max-w-7xl mx-auto px-4 mt-16">
+
+    <!-- HEADING -->
+    <div class="flex items-center justify-between mb-6">
+
+        <div>
+            <h2 class="text-2xl md:text-3xl font-semibold uppercase text-gold">
+                New Arrivals
+            </h2>
+
+            <p class="text-gray-500 text-sm mt-1">
+                Discover our latest fashion collection
+            </p>
+        </div>
+
+        <a href="{% url 'product_list' %}"
+            class="text-sm uppercase tracking-wider text-gold hover:text-black transition">
+            View All
+        </a>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <!-- IMAGE -->
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- BADGE -->
+                <span
+                    class="absolute top-4 left-4 bg-gold text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    New
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-md hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <!-- CONTENT -->
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Luxury White Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Premium Women Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹2,499
+                        </span>
+
+                        <span class="text-sm text-gray-400 line-through ml-2">
+                            ₹3,999
+                        </span>
+
+                    </div>
+
+                    <!-- CART -->
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <span
+                    class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    Trending
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-md hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Premium Black Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Evening Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹3,299
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden block">
+
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <span
+                    class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    Hot
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-md hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Elegant Beige Outfit
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Modern Fashion Wear
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹1,999
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ================= IMAGE SWIPE CARD ================= -->
+<section class="w-full flex items-center justify-center px-4 py-10 mt-24">
+
+    <div
+        class="relative w-full max-w-[340px] md:max-w-[420px] lg:max-w-[500px] rounded-[32px] overflow-hidden shadow-2xl bg-white group">
+
+        <!-- IMAGE AREA -->
+        <div class="relative h-[500px] md:h-[620px] overflow-hidden">
+
+            <!-- IMAGE 1 -->
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+                class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none">
+
+            <!-- IMAGE 2 -->
+            <div id="imageReveal" class="absolute inset-y-0 left-0 overflow-hidden w-1/2 transition-all duration-75">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
+                    class="absolute inset-0 w-full h-full object-cover min-w-[340px] md:min-w-[420px] lg:min-w-[500px] select-none pointer-events-none">
+
+            </div>
+
+            <!-- SLIDER LINE -->
+            <div id="sliderLine"
+                class="absolute top-0 left-1/2 h-full w-[2px] bg-white z-30 transition-all duration-75 shadow-[0_0_20px_rgba(255,255,255,0.8)]">
+
+                <!-- SLIDER BUTTON -->
+                <div
+                    class="absolute top-1/2 -translate-y-1/2 -left-[18px] w-10 h-10 rounded-full bg-white shadow-2xl border border-gray-200 flex items-center justify-center">
+
+                    <i class="fas fa-arrows-alt-h text-sm text-black"></i>
+
+                </div>
+
+            </div>
+
+            <!-- RANGE SLIDER -->
+            <input type="range" min="0" max="100" value="50" id="slider"
+                class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40">
+
+            <!-- TOP OVERLAY -->
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10 pointer-events-none">
+            </div>
+
+            <!-- LABEL LEFT -->
+            <a href="{% url 'product_list' %}"
+                class="absolute bottom-5 left-5 bg-white/90 backdrop-blur px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg z-40">
+
+                View Products
+
+            </a>
+
+            <!-- LABEL RIGHT -->
+            <a href="{% url 'product_list' %}"
+                class="absolute bottom-5 right-5 bg-black/80 text-white backdrop-blur px-4 py-2 rounded-full text-xs md:text-sm font-medium shadow-lg z-40">
+
+                View Collection
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+    const slider = document.getElementById("slider");
+    const imageReveal = document.getElementById("imageReveal");
+    const sliderLine = document.getElementById("sliderLine");
+
+    slider.addEventListener("input", (e) => {
+
+        let value = e.target.value;
+
+        imageReveal.style.width = value + "%";
+        sliderLine.style.left = value + "%";
+
+    });
+
+</script>
+{% endblock %}

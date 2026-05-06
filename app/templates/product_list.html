@@ -1,0 +1,498 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- ================= TOP BAR ================= -->
+<section class="max-w-7xl mx-auto px-4 mt-10 mt-32 md:mt-44">
+
+    <div class="flex items-center justify-between gap-4 flex-wrap">
+
+        <!-- LEFT -->
+        <div>
+
+            <h2 class="text-2xl md:text-3xl font-semibold uppercase text-gold">
+                All Products
+            </h2>
+
+            <p class="text-gray-500 text-sm mt-1">
+                Showing 120 products
+            </p>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-3">
+
+            <!-- SEARCH -->
+            <div class="relative hidden md:block">
+
+                <input type="text" placeholder="Search products..."
+                    class="w-[260px] h-12 rounded-full border border-gray-200 px-5 pr-12 focus:outline-none focus:ring-2 focus:ring-gold">
+
+                <i class="fas fa-search absolute right-5 top-1/2 -translate-y-1/2 text-gray-400"></i>
+
+            </div>
+
+            <!-- FILTER BUTTON -->
+            <button onclick="openFilter()"
+                class="h-12 px-6 rounded-full bg-black text-white hover:bg-gold transition flex items-center gap-3">
+
+                <i class="fas fa-sliders-h"></i>
+                Filters
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCT GRID ================= -->
+<section class="max-w-7xl mx-auto px-4 mt-10 mb-20">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <!-- IMAGE -->
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <!-- BADGE -->
+                <span
+                    class="absolute top-4 left-4 bg-gold text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    New
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <!-- CONTENT -->
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Luxury White Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Premium Women Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+
+                        <span class="text-xl font-bold text-black">
+                            ₹2,499
+                        </span>
+
+                        <span class="text-sm text-gray-400 line-through ml-2">
+                            ₹3,999
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <span
+                    class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    Trending
+                </span>
+
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Premium Black Dress
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Evening Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+                        <span class="text-xl font-bold text-black">
+                            ₹3,299
+                        </span>
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <span
+                    class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
+                    Hot
+                </span>
+
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Elegant Beige Outfit
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Modern Fashion Wear
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+                        <span class="text-xl font-bold text-black">
+                            ₹1,999
+                        </span>
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT CARD -->
+        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+
+            <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
+
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop"
+                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+            </a>
+
+            <div class="p-5">
+
+                <h3 class="text-lg font-semibold text-black">
+                    Gold Edition Saree
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Wedding Special Collection
+                </p>
+
+                <div class="flex items-center justify-between mt-5">
+
+                    <div>
+                        <span class="text-xl font-bold text-black">
+                            ₹4,999
+                        </span>
+                    </div>
+
+                    <button
+                        class="w-10 h-10 rounded-full bg-black text-white hover:bg-gold transition flex items-center justify-center">
+
+                        <i class="fas fa-shopping-bag text-sm"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FILTER POPUP ================= -->
+<div id="filterPopup"
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[999] hidden items-end md:items-center justify-center">
+
+    <!-- FILTER BOX -->
+    <div
+        class="bg-white w-full md:max-w-2xl md:rounded-[32px] rounded-t-[32px] p-6 md:p-8 overflow-y-auto max-h-[90vh] animate-slideUp">
+
+        <!-- TOP -->
+        <div class="flex items-center justify-between mb-8">
+
+            <div>
+                <h3 class="text-2xl font-semibold text-black">
+                    Filters
+                </h3>
+
+                <p class="text-gray-500 text-sm mt-1">
+                    Refine your product search
+                </p>
+            </div>
+
+            <button onclick="closeFilter()"
+                class="w-10 h-10 rounded-full bg-gray-100 hover:bg-black hover:text-white transition flex items-center justify-center">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+        </div>
+
+        <!-- SEARCH -->
+        <div class="mb-6">
+
+            <label class="text-sm font-medium text-black mb-2 block">
+                Search
+            </label>
+
+            <input type="text" placeholder="Search product..."
+                class="w-full h-12 rounded-2xl border border-gray-200 px-4 focus:outline-none focus:ring-2 focus:ring-gold">
+
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="mb-6">
+
+            <label class="text-sm font-medium text-black mb-3 block">
+                Categories
+            </label>
+
+            <div class="grid grid-cols-2 gap-3">
+
+                <label class="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl">
+                    <input type="checkbox">
+                    Dresses
+                </label>
+
+                <label class="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl">
+                    <input type="checkbox">
+                    Sarees
+                </label>
+
+                <label class="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl">
+                    <input type="checkbox">
+                    Tops
+                </label>
+
+                <label class="flex items-center gap-3 bg-gray-50 p-4 rounded-2xl">
+                    <input type="checkbox">
+                    Gowns
+                </label>
+
+            </div>
+
+        </div>
+
+        <!-- PRICE -->
+        <div class="mb-6">
+
+            <label class="text-sm font-medium text-black mb-3 block">
+                Price Range
+            </label>
+
+            <input type="range" min="500" max="10000" class="w-full accent-black">
+
+            <div class="flex justify-between text-sm text-gray-500 mt-2">
+                <span>₹500</span>
+                <span>₹10,000</span>
+            </div>
+
+        </div>
+
+        <!-- SIZE -->
+        <div class="mb-6">
+
+            <label class="text-sm font-medium text-black mb-3 block">
+                Sizes
+            </label>
+
+            <div class="flex flex-wrap gap-3">
+
+                <button class="w-12 h-12 rounded-full border hover:bg-black hover:text-white transition">
+                    XS
+                </button>
+
+                <button class="w-12 h-12 rounded-full border hover:bg-black hover:text-white transition">
+                    S
+                </button>
+
+                <button class="w-12 h-12 rounded-full border hover:bg-black hover:text-white transition">
+                    M
+                </button>
+
+                <button class="w-12 h-12 rounded-full border hover:bg-black hover:text-white transition">
+                    L
+                </button>
+
+                <button class="w-12 h-12 rounded-full border hover:bg-black hover:text-white transition">
+                    XL
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- COLORS -->
+        <div class="mb-8">
+
+            <label class="text-sm font-medium text-black mb-3 block">
+                Colors
+            </label>
+
+            <div class="flex gap-4 flex-wrap">
+
+                <button class="w-10 h-10 rounded-full bg-black border-4 border-white shadow-lg"></button>
+
+                <button class="w-10 h-10 rounded-full bg-red-500 border-4 border-white shadow-lg"></button>
+
+                <button class="w-10 h-10 rounded-full bg-pink-400 border-4 border-white shadow-lg"></button>
+
+                <button class="w-10 h-10 rounded-full bg-yellow-400 border-4 border-white shadow-lg"></button>
+
+                <button class="w-10 h-10 rounded-full bg-blue-500 border-4 border-white shadow-lg"></button>
+
+            </div>
+
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="grid grid-cols-2 gap-4">
+
+            <button class="h-14 rounded-2xl border border-gray-300 hover:bg-gray-100 transition font-medium">
+
+                Reset
+
+            </button>
+
+            <button class="h-14 rounded-2xl bg-black text-white hover:bg-gold transition font-medium">
+
+                Apply Filters
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+    function openFilter() {
+        document.getElementById("filterPopup").classList.remove("hidden");
+        document.getElementById("filterPopup").classList.add("flex");
+    }
+
+    function closeFilter() {
+        document.getElementById("filterPopup").classList.add("hidden");
+        document.getElementById("filterPopup").classList.remove("flex");
+    }
+
+</script>
+
+
+
+<!-- ================= ANIMATION ================= -->
+<style>
+    @keyframes slideUp {
+
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+    }
+
+    .animate-slideUp {
+        animation: slideUp .3s ease;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% load static %}
+
+<footer class="mt-20 mb-10 px-4 text-gray-200">
+
+    <div class="max-w-6xl mx-auto w-full">
+
+        <div
+            class="bg-black border border-white/10 rounded-2xl px-6 sm:px-10 py-10 sm:py-12 shadow-xl backdrop-blur-xl">
+
+            <!-- GRID -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 text-center sm:text-left">
+
+                <!-- BRAND -->
+                <div class="flex flex-col items-center sm:items-start">
+                    <img src="{% static 'logo/logo.png' %}" class="h-14 sm:h-16 mb-4">
+
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-xs">
+                        Premium fashion crafted with elegance and attention to detail.
+                    </p>
+                </div>
+
+
+                <!-- LINKS -->
+                <div>
+                    <h3 class="text-sm mb-4 text-gold tracking-wide">Quick Links</h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{% url 'index' %}" class="hover:text-gold transition">Home</a></li>
+                        <li><a href="{% url 'product_list' %}" class="hover:text-gold transition">Products</a></li>
+                        <li><a href="{% url 'cart' %}" class="hover:text-gold transition">Cart</a></li>
+                        <li><a href="{% url 'wishlist' %}" class="hover:text-gold transition">Wishlist</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- SUPPORT -->
+                <div>
+                    <h3 class="text-sm mb-4 text-gold tracking-wide">Support</h3>
+
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-gold transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-gold transition">Contact</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- CONTACT -->
+                <div class="flex flex-col items-center sm:items-start">
+                    <h3 class="text-sm mb-4 text-gold tracking-wide">Contact</h3>
+
+                    <p class="text-sm text-gray-400">+971 55 528 4971</p>
+                    <p class="text-sm text-gray-400">jstradeintl@gmail.com</p>
+
+                    <!-- Social -->
+                    <div class="flex gap-3 mt-4">
+
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:border-gold hover:text-gold transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:border-gold hover:text-gold transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full hover:border-gold hover:text-gold transition">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM LINE -->
+            <div
+                class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 text-center sm:text-left mb-12">
+
+                <span>© {% now "Y" %} Lily Dale. All rights reserved.</span>
+
+                <a href="https://www.inspirezesttechnologies.com/" target="_blank" class="hover:text-gold transition">
+                    Developed by InspireZest Technologies Pvt Ltd.
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</footer>

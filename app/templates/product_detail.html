@@ -1,0 +1,688 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="max-w-7xl mx-auto px-4 py-8 md:py-10 mt-20 md:mt-24">
+
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-14 xl:gap-20 items-start">
+
+        <!-- ================= PRODUCT IMAGES ================= -->
+        <div class="lg:sticky lg:top-24">
+
+            <!-- MAIN IMAGE -->
+            <div class="relative overflow-hidden rounded-[28px] bg-white shadow-xl group cursor-crosshair border border-[#f4e4a6]"
+                id="imageContainer">
+
+                <!-- IMAGE -->
+                <img id="mainImage"
+                    src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+                    class="w-full h-[420px] md:h-[550px] object-cover">
+
+                <!-- ZOOM LENS -->
+                <div id="lens"
+                    class="absolute hidden w-32 h-32 border-2 border-white rounded-full shadow-2xl pointer-events-none z-20">
+                </div>
+
+                <!-- ZOOM RESULT -->
+                <div id="zoomResult"
+                    class="hidden absolute top-5 right-5 w-48 h-48 rounded-3xl border-4 border-white shadow-2xl bg-no-repeat bg-cover z-30">
+                </div>
+
+                <!-- BADGE -->
+                <span
+                    class="absolute top-4 left-4 bg-gradient-to-r from-[#d4af37] to-[#c9a227] text-white text-[10px] px-3 py-2 rounded-full uppercase tracking-wide z-40 shadow-lg">
+                    New Arrival
+                </span>
+
+                <!-- WISHLIST -->
+                <button
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition duration-300 z-40">
+
+                    <i class="far fa-heart text-sm"></i>
+
+                </button>
+
+                <!-- FULLSCREEN -->
+                <button onclick="openPopup()"
+                    class="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white/90 text-[#6b5314] backdrop-blur hover:bg-[#d4af37] hover:text-white transition flex items-center justify-center z-40 shadow-lg">
+
+                    <i class="fas fa-expand text-sm"></i>
+
+                </button>
+
+            </div>
+
+            <!-- THUMBNAILS -->
+            <div class="flex gap-3 mt-4 overflow-x-auto pb-2">
+
+                <img onclick="changeImage(this)"
+                    src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+                    class="w-20 h-24 md:w-24 md:h-28 object-cover rounded-xl cursor-pointer border-2 border-[#d4af37] shadow-sm shrink-0">
+
+                <img onclick="changeImage(this)"
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
+                    class="w-20 h-24 md:w-24 md:h-28 object-cover rounded-xl cursor-pointer border-2 border-transparent shadow-sm shrink-0">
+
+                <img onclick="changeImage(this)"
+                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop"
+                    class="w-20 h-24 md:w-24 md:h-28 object-cover rounded-xl cursor-pointer border-2 border-transparent shadow-sm shrink-0">
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= PRODUCT DETAILS ================= -->
+        <div class="pb-10">
+
+            <!-- CATEGORY -->
+            <p class="text-xs uppercase tracking-[4px] text-[#c9a227] font-semibold">
+                Premium Collection
+            </p>
+
+            <!-- TITLE -->
+            <h1 class="text-2xl md:text-4xl font-semibold text-[#2b2b2b] mt-3 leading-tight">
+                Luxury White Maternity Dress
+            </h1>
+
+            <!-- PRODUCT META -->
+            <div class="flex items-center gap-3 mt-5 flex-wrap">
+
+                <span
+                    class="px-4 py-2 rounded-full bg-[#fdf6df] text-[#c9a227] text-xs font-semibold uppercase tracking-wide">
+
+                    Premium Quality
+
+                </span>
+
+                <span
+                    class="px-4 py-2 rounded-full bg-[#fff8e7] text-[#b8921f] text-xs font-semibold uppercase tracking-wide">
+
+                    Limited Edition
+
+                </span>
+
+            </div>
+
+            <!-- PRICE -->
+            <div class="flex items-center gap-4 mt-6 flex-wrap">
+
+                <span class="text-3xl md:text-4xl font-bold text-[#2b2b2b]">
+                    ₹2,499
+                </span>
+
+                <span class="text-lg text-gray-400 line-through">
+                    ₹3,999
+                </span>
+
+                <span class="bg-[#eef7ed] text-[#5e8b5e] text-xs px-3 py-2 rounded-full font-medium">
+                    38% OFF
+                </span>
+
+            </div>
+
+            <!-- DESCRIPTION -->
+            <p class="text-gray-600 leading-7 mt-6 text-sm">
+                Elegant premium maternity dress designed with luxury fabric,
+                modern fitting, soft comfort, and stylish finishing suitable
+                for casual wear, party wear, and occasion styling.
+            </p>
+
+
+
+            <!-- ================= OPTIONS ================= -->
+            <div class="space-y-6 mt-8">
+
+                <!-- MATERNITY -->
+                <div class="bg-white rounded-2xl border border-[#f4e4a6] p-4 shadow-sm">
+
+                    <h3 class="text-base md:text-lg font-semibold text-[#6b5314] mb-4">
+                        Maternity Type
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                        <label
+                            class="flex items-start gap-3 border border-[#f4e4a6] rounded-xl p-4 cursor-pointer bg-[#fffaf0]">
+
+                            <input type="checkbox" checked class="mt-1 w-4 h-4 accent-[#d4af37]">
+
+                            <div>
+
+                                <h4 class="font-medium text-sm text-[#6b5314]">
+                                    Maternity Wear
+                                </h4>
+
+                                <p class="text-xs text-[#9b8348] mt-1">
+                                    Comfortable maternity fit
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                        <label
+                            class="flex items-start gap-3 border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-[#d4af37] transition">
+
+                            <input type="checkbox" class="mt-1 w-4 h-4 accent-[#d4af37]">
+
+                            <div>
+
+                                <h4 class="font-medium text-sm text-[#6b5314]">
+                                    Regular Wear
+                                </h4>
+
+                                <p class="text-xs text-[#9b8348] mt-1">
+                                    Standard elegant fit
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SLEEVE -->
+                <div class="bg-white rounded-2xl border border-[#f4e4a6] p-4 shadow-sm">
+
+                    <h3 class="text-base md:text-lg font-semibold text-[#6b5314] mb-4">
+                        Sleeve Type
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+
+                        <label
+                            class="flex items-start gap-3 border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-[#d4af37] transition">
+
+                            <input type="checkbox" class="mt-1 w-4 h-4 accent-[#d4af37]">
+
+                            <div>
+
+                                <h4 class="font-medium text-sm text-[#6b5314]">
+                                    Sleeveless
+                                </h4>
+
+                                <p class="text-xs text-[#9b8348] mt-1">
+                                    Modern sleeveless style
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                        <label
+                            class="flex items-start gap-3 border border-[#f4e4a6] rounded-xl p-4 cursor-pointer bg-[#fffaf0]">
+
+                            <input type="checkbox" checked class="mt-1 w-4 h-4 accent-[#d4af37]">
+
+                            <div>
+
+                                <h4 class="font-medium text-sm text-[#6b5314]">
+                                    Full Sleeve
+                                </h4>
+
+                                <p class="text-xs text-[#9b8348] mt-1">
+                                    Elegant sleeve finish
+                                </p>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SIZE -->
+                <div class="bg-white rounded-2xl border border-[#f4e4a6] p-4 shadow-sm">
+
+                    <div class="flex items-center justify-between mb-4">
+
+                        <div>
+
+                            <h3 class="text-base md:text-lg font-semibold text-[#6b5314]">
+                                Select Size
+                            </h3>
+
+                            <p class="text-xs text-[#9b8348] mt-1">
+                                Choose your preferred size
+                            </p>
+
+                        </div>
+
+                        <button class="text-xs font-medium text-[#d4af37] hover:text-[#6b5314] transition">
+                            Size Guide
+                        </button>
+
+                    </div>
+
+                    <!-- SIZE OPTIONS -->
+                    <div class="grid grid-cols-4 gap-3">
+
+                        <button
+                            class="h-12 rounded-xl border border-[#d4af37] bg-gradient-to-r from-[#d4af37] to-[#c9a227] text-white text-sm font-semibold shadow-sm">
+                            S
+                        </button>
+
+                        <button
+                            class="h-12 rounded-xl border border-gray-200 hover:border-[#d4af37] hover:bg-[#fffaf0] transition-all duration-300 text-sm font-semibold text-[#6b5314]">
+                            M
+                        </button>
+
+                        <button
+                            class="h-12 rounded-xl border border-gray-200 hover:border-[#d4af37] hover:bg-[#fffaf0] transition-all duration-300 text-sm font-semibold text-[#6b5314]">
+                            L
+                        </button>
+
+                        <button
+                            class="h-12 rounded-xl border border-gray-200 hover:border-[#d4af37] hover:bg-[#fffaf0] transition-all duration-300 text-sm font-semibold text-[#6b5314]">
+                            XL
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COLORS -->
+                <div class="bg-white rounded-2xl border border-[#f4e4a6] p-4 shadow-sm">
+
+                    <div class="flex items-center justify-between mb-6">
+
+                        <div>
+
+                            <h3 class="text-base md:text-lg font-semibold text-[#6b5314]">
+                                Select Color
+                            </h3>
+
+                            <p class="text-xs text-[#9b8348] mt-1">
+                                White selected
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- COLORS -->
+                    <div class="flex flex-wrap items-center gap-5 pb-2">
+
+                        <button class="relative group">
+
+                            <div
+                                class="w-12 h-12 rounded-full bg-white border-[3px] border-[#d4af37] shadow-md flex items-center justify-center">
+
+                                <i class="fas fa-check text-[#6b5314] text-xs"></i>
+
+                            </div>
+
+                        </button>
+
+                        <button class="relative group hover:scale-110 transition duration-300">
+
+                            <div class="w-12 h-12 rounded-full bg-black shadow-md"></div>
+
+                        </button>
+
+                        <button class="relative group hover:scale-110 transition duration-300">
+
+                            <div class="w-12 h-12 rounded-full bg-red-500 shadow-md"></div>
+
+                        </button>
+
+                        <button class="relative group hover:scale-110 transition duration-300">
+
+                            <div class="w-12 h-12 rounded-full bg-pink-400 shadow-md"></div>
+
+                        </button>
+
+                        <button class="relative group hover:scale-110 transition duration-300">
+
+                            <div class="w-12 h-12 rounded-full bg-blue-500 shadow-md"></div>
+
+                        </button>
+
+                        <button class="relative group hover:scale-110 transition duration-300">
+
+                            <div class="w-12 h-12 rounded-full bg-green-500 shadow-md"></div>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+
+                <button
+                    class="h-14 rounded-2xl bg-gradient-to-r from-[#d4af37] to-[#c9a227] text-white hover:scale-[1.02] transition duration-300 text-sm font-medium flex items-center justify-center gap-3 shadow-lg">
+
+                    <i class="fas fa-shopping-bag"></i>
+                    Add to Cart
+
+                </button>
+
+                <button
+                    class="h-14 rounded-2xl border border-[#f1df9b] bg-[#fff9e8] hover:bg-[#fdf3cf] transition duration-300 text-sm font-medium text-[#8b6b16] flex items-center justify-center gap-3">
+
+                    <i class="far fa-heart"></i>
+                    Wishlist
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= FEATURES ================= -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-10">
+
+                <!-- FREE DELIVERY -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-truck text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        Free Delivery
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        Free shipping on all orders.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FAST DELIVERY -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-shipping-fast text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        3-5 Days
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        Fast & secure delivery.
+                    </p>
+
+                </div>
+
+
+
+                <!-- PREMIUM QUALITY -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-gem text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        Premium Quality
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        Luxury fabric & finishing.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SECURE PAYMENT -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-lock text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        Secure Payment
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        Trusted payment gateway.
+                    </p>
+
+                </div>
+
+
+
+                <!-- SUPPORT -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-headset text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        Support
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        Dedicated customer help.
+                    </p>
+
+                </div>
+
+
+
+                <!-- EASY RETURN -->
+                <div
+                    class="bg-[#fffaf0] rounded-xl p-3 border border-[#f4e4a6] hover:shadow-md transition duration-300">
+
+                    <div
+                        class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#c9a227] text-white flex items-center justify-center">
+
+                        <i class="fas fa-undo text-xs"></i>
+
+                    </div>
+
+                    <h4 class="font-semibold text-[#6b5314] text-xs md:text-sm mt-3">
+                        Easy Return
+                    </h4>
+
+                    <p class="text-[11px] text-[#9b8348] mt-1 leading-5">
+                        7 day return available.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SCRIPT ================= -->
+<script>
+
+    // ================= IMAGE CHANGE =================
+    function changeImage(element) {
+
+        const mainImage = document.getElementById("mainImage");
+
+        // CHANGE MAIN IMAGE
+        mainImage.src = element.src;
+
+        // REMOVE ACTIVE BORDER
+        document.querySelectorAll(".w-20").forEach(img => {
+
+            img.classList.remove("border-[#d4af37]");
+            img.classList.add("border-transparent");
+
+        });
+
+        // ADD ACTIVE BORDER
+        element.classList.remove("border-transparent");
+        element.classList.add("border-[#d4af37]");
+
+    }
+
+
+
+    // ================= IMAGE POPUP =================
+    function openPopup() {
+
+        document.getElementById("popupImage").src =
+            document.getElementById("mainImage").src;
+
+        document.getElementById("imagePopup")
+            .classList.remove("hidden");
+
+        document.getElementById("imagePopup")
+            .classList.add("flex");
+
+    }
+
+    function closePopup() {
+
+        document.getElementById("imagePopup")
+            .classList.add("hidden");
+
+        document.getElementById("imagePopup")
+            .classList.remove("flex");
+
+    }
+
+
+
+    // ================= ZOOM LENS =================
+    const imageContainer = document.getElementById("imageContainer");
+    const lens = document.getElementById("lens");
+    const result = document.getElementById("zoomResult");
+    const image = document.getElementById("mainImage");
+
+    imageContainer.addEventListener("mousemove", moveLens);
+    imageContainer.addEventListener("mouseenter", showLens);
+    imageContainer.addEventListener("mouseleave", hideLens);
+
+    function showLens() {
+
+        // DISABLE ON MOBILE
+        if (window.innerWidth < 1024) return;
+
+        lens.classList.remove("hidden");
+        result.classList.remove("hidden");
+
+    }
+
+    function hideLens() {
+
+        lens.classList.add("hidden");
+        result.classList.add("hidden");
+
+    }
+
+    function moveLens(e) {
+
+        // DISABLE ON MOBILE
+        if (window.innerWidth < 1024) return;
+
+        const rect = imageContainer.getBoundingClientRect();
+
+        let x = e.clientX - rect.left;
+        let y = e.clientY - rect.top;
+
+        const lensSize = 128;
+
+        // PREVENT LENS OUTSIDE IMAGE
+        x = Math.max(
+            lensSize / 2,
+            Math.min(x, rect.width - lensSize / 2)
+        );
+
+        y = Math.max(
+            lensSize / 2,
+            Math.min(y, rect.height - lensSize / 2)
+        );
+
+        // MOVE LENS
+        lens.style.left = `${x - lensSize / 2}px`;
+        lens.style.top = `${y - lensSize / 2}px`;
+
+        // BACKGROUND IMAGE
+        result.style.backgroundImage = `url(${image.src})`;
+
+        // ZOOM SIZE
+        result.style.backgroundSize =
+            `${rect.width * 2}px ${rect.height * 2}px`;
+
+        // POSITION
+        result.style.backgroundPosition =
+            `-${x * 2 - 96}px -${y * 2 - 96}px`;
+
+    }
+
+
+
+    // ================= CLOSE POPUP ON OUTSIDE CLICK =================
+    document.getElementById("imagePopup")
+        .addEventListener("click", function (e) {
+
+            if (e.target.id === "imagePopup") {
+
+                closePopup();
+
+            }
+
+        });
+
+
+
+    // ================= ESC KEY CLOSE =================
+    document.addEventListener("keydown", function (e) {
+
+        if (e.key === "Escape") {
+
+            closePopup();
+
+        }
+
+    });
+
+</script>
+
+{% endblock %}
