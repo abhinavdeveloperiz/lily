@@ -685,4 +685,26 @@
 
 </script>
 
+
+
+<!-- ================= IMAGE POPUP MODAL ================= -->
+<div id="imagePopup" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+
+    <div class="relative max-w-4xl max-h-full">
+
+        <!-- CLOSE BUTTON -->
+        <button onclick="closePopup()"
+            class="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/20 backdrop-blur text-white hover:bg-white/30 transition flex items-center justify-center">
+
+            <i class="fas fa-times text-lg"></i>
+
+        </button>
+
+        <!-- POPUP IMAGE -->
+        <img id="popupImage" src="" class="max-w-full max-h-full object-contain rounded-2xl shadow-2xl">
+
+    </div>
+
+</div>
+
 {% endblock %}
