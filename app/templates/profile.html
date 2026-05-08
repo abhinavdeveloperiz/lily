@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================== PROFILE PAGE ===================== -->
+<section class="max-w-3xl mx-auto px-4 pt-24 md:pt-32 pb-32 min-h-screen">
+
+    <!-- ================= HEADER ================= -->
+    <div class="mb-8">
+
+        <p class="text-[10px] tracking-[5px] uppercase text-black font-semibold">
+            Customer Account
+        </p>
+
+        <h1 class="text-3xl md:text-5xl font-semibold text-gold mt-3 uppercase">
+            My Profile
+        </h1>
+
+    </div>
+
+
+
+    <!-- ================= PROFILE CARD ================= -->
+    <div class="bg-white border border-[#e8d79c] rounded-[32px] overflow-hidden shadow-sm">
+
+        <!-- TOP -->
+        <div class="bg-black px-6 py-10 text-center">
+
+            <!-- PROFILE ICON -->
+            <div class="w-24 h-24 rounded-full bg-[#d4af37] mx-auto flex items-center justify-center shadow-xl">
+
+                <i class="fa-solid fa-user text-4xl text-black"></i>
+
+            </div>
+
+            <!-- NAME -->
+            <h2 class="text-3xl font-semibold text-white mt-6">
+                Abhinav M
+            </h2>
+
+            <!-- EMAIL -->
+            <p class="text-[#d4af37] mt-3 text-sm break-all">
+                abhinav@gmail.com
+            </p>
+
+            <!-- LOGIN NOTE -->
+            <p class="text-white/50 text-xs uppercase tracking-[3px] mt-5">
+                Login using email ID only
+            </p>
+
+        </div>
+
+
+
+        <!-- ================= LINKS ================= -->
+        <div class="p-5 space-y-4">
+
+            <!-- ORDERS -->
+            <a href="{% url 'orders' %}"
+                class="flex items-center justify-between border border-[#e8d79c] rounded-3xl p-5 hover:bg-black hover:text-white transition duration-300 group">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-black text-[#d4af37] flex items-center justify-center group-hover:bg-[#d4af37] group-hover:text-black transition">
+
+                        <i class="fa-solid fa-box"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="text-lg font-semibold">
+                            My Orders
+                        </h3>
+
+                        <p class="text-sm text-gray-500 group-hover:text-white/60">
+                            View your orders
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+
+            </a>
+
+
+
+            <!-- WISHLIST -->
+            <a href="{% url 'wishlist' %}"
+                class="flex items-center justify-between border border-[#e8d79c] rounded-3xl p-5 hover:bg-black hover:text-white transition duration-300 group">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-black text-[#d4af37] flex items-center justify-center group-hover:bg-[#d4af37] group-hover:text-black transition">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="text-lg font-semibold">
+                            Wishlist
+                        </h3>
+
+                        <p class="text-sm text-gray-500 group-hover:text-white/60">
+                            Saved products
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+
+            </a>
+
+
+
+            <!-- CART -->
+            <a href="{% url 'cart' %}"
+                class="flex items-center justify-between border border-[#e8d79c] rounded-3xl p-5 hover:bg-black hover:text-white transition duration-300 group">
+
+                <div class="flex items-center gap-4">
+
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-black text-[#d4af37] flex items-center justify-center group-hover:bg-[#d4af37] group-hover:text-black transition">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="text-lg font-semibold">
+                            Cart
+                        </h3>
+
+                        <p class="text-sm text-gray-500 group-hover:text-white/60">
+                            View cart items
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+
+            </a>
+
+
+
+            <!-- LOGOUT -->
+            <button
+                class="w-full h-14 rounded-3xl bg-black text-[#d4af37] uppercase tracking-[3px] text-sm font-semibold hover:scale-[1.01] transition duration-300 mt-3">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

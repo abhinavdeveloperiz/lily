@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- ===================== ORDERS PAGE ===================== -->
+<section class="max-w-7xl mx-auto px-3 md:px-5 pt-24 md:pt-32 pb-32 bg-white min-h-screen">
+
+    <!-- ================= HEADER ================= -->
+    <div class="mb-8 md:mb-12">
+
+        <p class="text-[10px] tracking-[5px] uppercase text-[#c9a227] font-semibold">
+            Order History
+        </p>
+
+        <h1 class="text-3xl md:text-5xl font-semibold text-black mt-3 uppercase leading-tight">
+            My Orders
+        </h1>
+
+        <p class="text-gray-500 text-sm mt-2">
+            Track all your purchases
+        </p>
+
+    </div>
+
+
+
+    <!-- ===================== ORDER CARD ===================== -->
+    <div class="space-y-6">
+
+        <!-- SINGLE ORDER -->
+        <div
+            class="bg-white border border-[#e8d79c] rounded-[30px] overflow-hidden shadow-sm">
+
+            <!-- ================= TOP ================= -->
+            <div class="bg-black p-5 md:p-7">
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                    <!-- ORDER ID -->
+                    <div>
+
+                        <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                            Order ID
+                        </p>
+
+                        <h3 class="text-white text-sm md:text-lg font-semibold mt-2 break-words">
+                            #ORD874521
+                        </h3>
+
+                    </div>
+
+                    <!-- PAYMENT -->
+                    <div>
+
+                        <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                            Payment ID
+                        </p>
+
+                        <h3 class="text-white text-sm md:text-lg font-semibold mt-2 break-words">
+                            PAY92JS72H
+                        </h3>
+
+                    </div>
+
+                    <!-- DATE -->
+                    <div>
+
+                        <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                            Ordered
+                        </p>
+
+                        <h3 class="text-white text-sm md:text-lg font-semibold mt-2">
+                            08 May 2026
+                        </h3>
+
+                    </div>
+
+                    <!-- STATUS -->
+                    <div>
+
+                        <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                            Status
+                        </p>
+
+                        <div class="mt-2">
+
+                            <span
+                                class="px-3 py-2 rounded-full border border-[#d4af37] text-[#d4af37] text-[10px] uppercase tracking-wider font-semibold">
+
+                                Delivered
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= PRODUCT ================= -->
+            <div class="p-4 md:p-7">
+
+                <div class="flex flex-col gap-5">
+
+                    <!-- IMAGE -->
+                    <div class="rounded-[24px] overflow-hidden border border-[#e8d79c]">
+
+                        <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200&auto=format&fit=crop"
+                            class="w-full h-[320px] md:h-[500px] object-cover">
+
+                    </div>
+
+
+
+                    <!-- DETAILS -->
+                    <div>
+
+                        <!-- CATEGORY -->
+                        <p class="text-[10px] uppercase tracking-[4px] text-[#c9a227] font-semibold">
+                            Premium Collection
+                        </p>
+
+                        <!-- TITLE -->
+                        <h2 class="text-2xl md:text-4xl font-semibold text-black mt-3 leading-tight">
+                            Luxury White Maternity Dress
+                        </h2>
+
+                        <!-- PRICE -->
+                        <div class="flex items-center gap-4 mt-5 flex-wrap">
+
+                            <h3 class="text-3xl md:text-4xl font-bold text-black">
+                                ₹2,499
+                            </h3>
+
+                            <span
+                                class="px-4 py-2 rounded-full bg-black text-[#d4af37] text-[10px] uppercase tracking-widest">
+                                Paid Online
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================= ORDER DETAILS ================= -->
+                    <div class="grid grid-cols-2 gap-3 md:grid-cols-4 mt-2">
+
+                        <!-- SIZE -->
+                        <div
+                            class="border border-[#e8d79c] rounded-2xl p-4 bg-[#fffdf7]">
+
+                            <p class="text-[10px] uppercase tracking-[3px] text-[#c9a227]">
+                                Size
+                            </p>
+
+                            <h3 class="text-lg md:text-2xl font-semibold text-black mt-3">
+                                M
+                            </h3>
+
+                        </div>
+
+                        <!-- COLOR -->
+                        <div
+                            class="border border-[#e8d79c] rounded-2xl p-4 bg-[#fffdf7]">
+
+                            <p class="text-[10px] uppercase tracking-[3px] text-[#c9a227]">
+                                Color
+                            </p>
+
+                            <div class="flex items-center gap-3 mt-3">
+
+                                <div
+                                    class="w-7 h-7 rounded-full bg-white border-2 border-[#d4af37]">
+                                </div>
+
+                                <span class="text-black font-semibold text-sm">
+                                    White
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <!-- QUANTITY -->
+                        <div
+                            class="border border-[#e8d79c] rounded-2xl p-4 bg-[#fffdf7]">
+
+                            <p class="text-[10px] uppercase tracking-[3px] text-[#c9a227]">
+                                Quantity
+                            </p>
+
+                            <h3 class="text-lg md:text-2xl font-semibold text-black mt-3">
+                                2
+                            </h3>
+
+                        </div>
+
+                        <!-- DELIVERY -->
+                        <div
+                            class="border border-[#e8d79c] rounded-2xl p-4 bg-[#fffdf7]">
+
+                            <p class="text-[10px] uppercase tracking-[3px] text-[#c9a227]">
+                                Delivery
+                            </p>
+
+                            <h3 class="text-sm md:text-lg font-semibold text-black mt-3 leading-6">
+                                12 May 2026
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================= ADDRESS ================= -->
+                    <div
+                        class="bg-black rounded-[28px] p-5 md:p-7 mt-2">
+
+                        <!-- TOP -->
+                        <div class="flex items-center gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-[#d4af37] flex items-center justify-center shrink-0">
+
+                                <i class="fas fa-location-dot text-black"></i>
+
+                            </div>
+
+                            <div>
+
+                                <p class="text-[10px] uppercase tracking-[4px] text-[#d4af37]">
+                                    Delivery Address
+                                </p>
+
+                                <h3 class="text-white text-lg font-semibold mt-1">
+                                    Abhinav M
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ADDRESS -->
+                        <div class="mt-5">
+
+                            <p class="text-white/80 leading-7 text-sm">
+
+                                Krishna Bhavan,
+                                Beach Road,
+                                Pallitottam,
+                                Kollam,
+                                Kerala - 691006
+
+                            </p>
+
+                        </div>
+
+                        <!-- EXTRA -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+
+                            <div
+                                class="border border-[#d4af37]/30 rounded-2xl p-4">
+
+                                <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                                    Phone
+                                </p>
+
+                                <h3 class="text-white text-sm font-medium mt-2">
+                                    +91 9876543210
+                                </h3>
+
+                            </div>
+
+                            <div
+                                class="border border-[#d4af37]/30 rounded-2xl p-4">
+
+                                <p class="text-[10px] uppercase tracking-[3px] text-[#d4af37]">
+                                    Payment Method
+                                </p>
+
+                                <h3 class="text-white text-sm font-medium mt-2">
+                                    Razorpay / UPI
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
