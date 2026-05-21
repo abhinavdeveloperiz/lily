@@ -56,16 +56,16 @@
 <!-- ================= PRODUCT GRID ================= -->
 <section class="max-w-7xl mx-auto px-4 mt-10 mb-20">
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- PRODUCT CARD -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
-
+        <div
+            class="product-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
             <!-- IMAGE -->
             <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
 
                 <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=900&auto=format&fit=crop"
-                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+                    class="w-full h-[200px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
 
                 <!-- BADGE -->
                 <span
@@ -90,9 +90,7 @@
                     Luxury White Dress
                 </h3>
 
-                <p class="text-gray-500 text-sm mt-1">
-                    Premium Women Collection
-                </p>
+            
 
                 <div class="flex items-center justify-between mt-5">
 
@@ -124,12 +122,13 @@
 
 
         <!-- PRODUCT CARD -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+        <div
+            class="product-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
 
             <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
 
                 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=900&auto=format&fit=crop"
-                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+                    class="w-full h-[200px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
 
                 <span
                     class="absolute top-4 left-4 bg-black text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
@@ -151,9 +150,7 @@
                     Premium Black Dress
                 </h3>
 
-                <p class="text-gray-500 text-sm mt-1">
-                    Evening Collection
-                </p>
+           
 
                 <div class="flex items-center justify-between mt-5">
 
@@ -179,12 +176,13 @@
 
 
         <!-- PRODUCT CARD -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+        <div
+            class="product-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
 
             <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
 
                 <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=900&auto=format&fit=crop"
-                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+                    class="w-full h-[200px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
 
                 <span
                     class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wide">
@@ -206,9 +204,7 @@
                     Elegant Beige Outfit
                 </h3>
 
-                <p class="text-gray-500 text-sm mt-1">
-                    Modern Fashion Wear
-                </p>
+             
 
                 <div class="flex items-center justify-between mt-5">
 
@@ -234,12 +230,13 @@
 
 
         <!-- PRODUCT CARD -->
-        <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
+        <div
+            class="product-card bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
 
             <a href="{% url 'product_detail' %}" class="relative overflow-hidden">
 
                 <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=900&auto=format&fit=crop"
-                    class="w-full h-[340px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
+                    class="w-full h-[200px] md:h-[420px] object-cover group-hover:scale-110 transition duration-700">
 
                 <button
                     class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-lg hover:bg-red-500 hover:text-white transition">
@@ -256,9 +253,7 @@
                     Gold Edition Saree
                 </h3>
 
-                <p class="text-gray-500 text-sm mt-1">
-                    Wedding Special Collection
-                </p>
+
 
                 <div class="flex items-center justify-between mt-5">
 
@@ -475,6 +470,121 @@
 
 
 <!-- ================= ANIMATION ================= -->
+
+
+<!-- ================= ANIMATION ================= -->
+<style>
+    /* FILTER POPUP */
+    @keyframes slideUp {
+
+        from {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+    }
+
+    .animate-slideUp {
+        animation: slideUp .3s ease;
+    }
+
+
+
+    /* ================= FLOATING PRODUCT CARDS ================= */
+
+    @keyframes floatingCard {
+
+        0% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+
+        100% {
+            transform: translateY(0px);
+        }
+
+    }
+
+    .product-card {
+
+        animation: floatingCard 4s ease-in-out infinite;
+        will-change: transform;
+        transform: translateZ(0);
+
+    }
+
+    /* DIFFERENT TIMINGS FOR EACH CARD */
+
+    .product-card:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .product-card:nth-child(2) {
+        animation-delay: .8s;
+    }
+
+    .product-card:nth-child(3) {
+        animation-delay: 1.6s;
+    }
+
+    .product-card:nth-child(4) {
+        animation-delay: 2.4s;
+    }
+
+    .product-card:nth-child(5) {
+        animation-delay: 3.2s;
+    }
+
+    .product-card:nth-child(6) {
+        animation-delay: 4s;
+    }
+
+
+
+    /* PREMIUM HOVER EFFECT */
+
+    .product-card:hover {
+
+        transform: translateY(-14px) scale(1.02);
+        transition: all .5s ease;
+
+    }
+
+
+
+    /* MOBILE OPTIMIZATION */
+
+    @media(max-width:768px) {
+
+        @keyframes floatingCard {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+
+        }
+
+    }
+</style>
+
+
+
 <style>
     @keyframes slideUp {
 

@@ -23,11 +23,40 @@
 
 
     <style>
+        /* Gold color utilities available without changing Tailwind config */
+        :root {
+            --gold: #d4af37;
+            /* primary gold */
+            --gold-text: #c9a227;
+            /* slightly different tone for text */
+        }
+
         /* Metallic gold text effect (close to your logo look) */
         .gold-text {
-            background: linear-gradient(135deg, #f7e7a1, #d4af37, #b8962e);
+            background: linear-gradient(135deg, #f7e7a1, var(--gold), #b8962e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Simple utility classes you can use in templates */
+        .bg-gold {
+            background-color: var(--gold) !important;
+        }
+
+        .bg-gold-20 {
+            background-color: rgba(212, 175, 55, 0.2) !important;
+        }
+
+        .bg-gold-30 {
+            background-color: rgba(212, 175, 55, 0.3) !important;
+        }
+
+        .text-gold {
+            color: var(--gold-text) !important;
+        }
+
+        .border-gold {
+            border-color: var(--gold) !important;
         }
 
         /* Optional subtle glow */
